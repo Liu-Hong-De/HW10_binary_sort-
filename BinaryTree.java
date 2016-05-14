@@ -35,6 +35,38 @@ public class BinaryTree {
 		}
 	}
 	
+	//if the number is smaller add this number to left
+	public void addToLeft(int element, Node temp) {
+		if(temp.left == null) {
+			temp.left = new Node(element);
+			size++;
+		}
+		
+		else if(element < (int)((temp.left).element)){
+			addToLeft(element, temp.left);
+		}
+		
+		else{
+			addToRight(element, temp.left);
+		}
+	}
+
+	//if the number is larger add this number to right
+	public void addToRight(int element, Node temp) {
+		if(temp.right == null) {
+			temp.right = new Node(element);
+			size++;
+		}
+		
+		else if(element > (int)((temp.right).element)) {
+			addToRight(element, temp.right);
+		}
+		
+		else{
+			addToLeft(element, temp.right);
+		}
+	}
+	
 	private static class Node<E> {
 		E element;
 		Node<E> left;
