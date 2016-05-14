@@ -16,6 +16,25 @@ public class BinaryTree {
 		}
 	}
 	
+	public void add(int element) {
+		
+		if(size == 0){
+			root = new Node(element);
+			size++;
+		}
+		
+		//if the next number is big than previous,then let these number change their site
+		else{
+			if(element < (int)root.element) {
+				addToLeft(element,root);
+			}
+			
+			else{
+				addToRight(element,root);
+			}
+		}
+	}
+	
 	private static class Node<E> {
 		E element;
 		Node<E> left;
