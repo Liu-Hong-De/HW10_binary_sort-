@@ -67,6 +67,33 @@ public class BinaryTree {
 		}
 	}
 	
+	//print the result of binary tree
+	public void printOut() {
+		if(root.left != null) {
+			printOut(root.left);
+		}
+		
+		System.out.println(root.element);
+		
+		if(root.right != null) {
+			printOut(root.right);
+		}
+	}
+
+	//print the result
+	public void printOut(Node node) {
+		if(node.left != null) {
+			printOut(node.left);
+		}
+		
+		System.out.println(node.element);
+		
+		if(node.right != null) {
+			printOut(node.right);
+		}
+	}
+
+	
 	private static class Node<E> {
 		E element;
 		Node<E> left;
